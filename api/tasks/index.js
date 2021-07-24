@@ -14,8 +14,10 @@ module.exports = async function (context, req) {
     const decoded = encoded.toString('ascii');
     const user = JSON.parse(decoded);
 
+    console.log(req.body);
+
     const task = {
-        label: req.body.name,
+        label: req.body.label,
         status: 'open'
     };
 
