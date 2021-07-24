@@ -21,7 +21,7 @@ module.exports = async function (context, req) {
         status: 'open'
     };
 
-    const t = database.collection("users").insertOne(task);
+    const t = await database.collection("users").insertOne(task);
 
     context.res = {
         // status: 200, /* Defaults to 200 */
