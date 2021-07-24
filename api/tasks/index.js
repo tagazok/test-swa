@@ -12,6 +12,7 @@ module.exports = async function (context, req) {
             task: {
                 id: 1,
                 userId: user.userId,
+                status: 'open',
                 label: task
             }
         }
