@@ -21,7 +21,12 @@ module.exports = async function (context, req) {
         status: 'open'
     };
 
-    const response = await database.collection("users").insertOne(task);
+    // const response = await database.collection("users").insertOne(task);
+    const response = await database.collection("users").updateOne(
+        { userId: user.userId },
+        { $push: { tasks: task } }
+    );
+    context.log(response);
     task.id = response.insertedId;
     context.res = {
         // status: 200, /* Defaults to 200 */
