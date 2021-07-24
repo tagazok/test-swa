@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+
     <title>Document</title>
 </head>
+
 <body>
-    <div>Coucou</div>
+    <!-- <div>Coucou</div>
     <div><a href="/.auth/login/github">Login with GitHub</a></div>
-    <div><a href="/.auth/logout">Log out</a></div>
+    <div><a href="/.auth/logout">Log out</a></div> -->
+    <nav>
+        <a href="/.auth/login/github">Login with GitHub</a>
+        <a href="/.auth/logout">Log out</a>
+    </nav>
+    <div class="container task_list_empty">
+        <header>
+            <span class="heading">My TODO</span>
+        </header>
+        <section class="tasks">
+            <ul id="tasksList"></ul>
+        </section>
+        <footer>
+            <form id="new_task_form">
+                <input type="text" id="new_task_input" placeholder="Add New Task" value="" />
+                <button id="new_task_input_btn" type="submit">Add</button>
+            </form>
+        </footer>
+    </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>
