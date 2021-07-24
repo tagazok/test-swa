@@ -26,7 +26,7 @@ taskform.addEventListener('submit', async (e) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.parse({label: newTaskInputnewTaskInput.value})
+        body: JSON.parse({label: newTaskInput.value})
     });
     const payload = await response.json();
     console.log(payload);
