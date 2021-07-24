@@ -1,11 +1,14 @@
 module.exports = async function (context, req) {
-    const header = req.headers['x-ms-client-principal'];
-    const encoded = Buffer.from(header, 'base64');
-    const decoded = encoded.toString('ascii');
+    context.log('JavaScript HTTP trigger function processed a request.');
 
+    const task = req.body.name;
     context.res = {
+        // status: 200, /* Defaults to 200 */
         body: {
-            clientPrincipal: JSON.parse(decoded),
-        },
+            task: {
+                id: 1,
+                label: task
+            }
+        }
     };
 }
