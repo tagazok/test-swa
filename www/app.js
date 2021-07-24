@@ -23,11 +23,15 @@ taskform.addEventListener('submit', async (e) => {
 
     const response = await fetch('/api/tasks', {
         method: 'POST',
-        body: new_task_input.value
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.parse({label: task})
     });
     const payload = await response.json();
     console.log(payload);
-    const task = generateTask(newTaskInput.value);
+    // const task = generateTask(newTaskInput.value);
+    const task = generateTask(payload.task);
 
     taskList.appendChild(task);
 
@@ -36,8 +40,8 @@ taskform.addEventListener('submit', async (e) => {
 
 function generateTask(task) {
     const tmpl = `
-    <div class="task">
-        ${task}
+    <div class="task-${task.id}">
+        ${task.label}
     </div>
     `;
     const range = document.createRange();

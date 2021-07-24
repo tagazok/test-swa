@@ -5,7 +5,6 @@
 body {
     display: flex;
     min-height: 100vh;
-    justify-content: center;
     align-items: center;
     overflow: hidden;
     flex-direction: column;
@@ -16,12 +15,14 @@ nav {
     display: flex;
     flex-direction: row;
 }
+
 .container {
     padding: 30px;
     display: flex;
     flex-direction: column;
     width: 300px;
-    border-radius: 20px;
+    flex: 1;
+    justify-content: center;
 }
 
 header {
@@ -62,4 +63,9 @@ footer form {
     display: flex;
     flex-direction: row;
     align-content: center;
+}
+
+footer form input {
+    flex: 1;
+    padding: .8em;
 }
