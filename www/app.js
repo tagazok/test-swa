@@ -6,5 +6,4 @@ async function getUser() {
     const { clientPrincipal } = payload;
     return clientPrincipal;
 }
-
-console.log(await getUser());
+await getUser();
