@@ -21,12 +21,12 @@ module.exports = async function (context, req) {
         status: 'open'
     };
 
-    const t = await database.collection("users").insertOne(task);
-
+    const response = await database.collection("users").insertOne(task);
+    task.id = response.insertedId;
     context.res = {
         // status: 200, /* Defaults to 200 */
         body: {
-            task: t
+            task: task
         }
     };
 }
