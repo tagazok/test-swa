@@ -50,9 +50,12 @@ async function getTasks() {
 
 function generateTask(task) {
     const tmpl = `
-    <div class="task-${task.id}">
-        ${task.label}
-    </div>
+    <li class="task-item" id="${task.id}">
+        <label>
+            <input type="checkbox" ${task.cheched}>
+            <p>${task.label}</p>
+        </label>
+    </li>
     `;
     const range = document.createRange();
     const fragment = range.createContextualFragment(tmpl);

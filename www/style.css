@@ -53,27 +53,38 @@ header {
     color: var(--text-color);
 }
 
-.task_item {
-    list-style-type: none;
-    border: 1px var(--secondary-color) solid;
-    padding: 10px;
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    border-radius: 7px;
-    margin-bottom: 20px;
-    background-color: var(--task-color);
     color: var(--text-color);
+    font-weight: 600;
+    border-bottom: solid 1px rgba(0, 0, 0, .1);
 }
 
-.task_item:hover {
-    transition: 0.5s;
-    /* border: 1px rgba(148, 148, 148, 0.63) solid; */
-    cursor: pointer;
-    background-color:rgba(226, 226, 226, 0.192);
-
+.task-item label {
+    display: flex;
+    flex-direction: row;
+    padding: 1em 0;
 }
 
+.task-item label p {
+    padding-left: .5em;
+    margin: 0;
+}
+
+.task-item label input:checked ~ p {
+    text-decoration: line-through;
+    color: rgba(53, 53, 53, .3);
+}
+
+.task-item:last-child {
+    border: none;
+}
 
 footer form {
     display: flex;

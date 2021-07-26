@@ -16,7 +16,7 @@
     <div><a href="/.auth/logout">Log out</a></div> -->
     <nav>
         <a href="/.auth/login/github">Login with GitHub</a></li>
-        
+
         <a href="/.auth/logout">Log out</a>
     </nav>
     <div class="container task_list_empty">
@@ -24,7 +24,26 @@
             <span class="heading">My TODO</span>
         </header>
         <section class="tasks">
-            <ul id="tasksList"></ul>
+            <ul id="tasksList" class="task-list">
+                <li class="task-item" id="${task.id}">
+                    <label>
+                        <input type="checkbox">
+                        <p>Acheter des carottes</p>
+                    </label>
+                </li>
+                <li class="task-item" id="${task.id}">
+                    <label>
+                        <input type="checkbox">
+                        <p>Acheter des poireaux</p>
+                    </label>
+                </li>
+                <li class="task-item" id="${task.id}">
+                    <label>
+                        <input type="checkbox">
+                        <p>Acheter des patates</p>
+                    </label>
+                </li>
+            </ul>
         </section>
         <footer>
             <form id="new_task_form">
