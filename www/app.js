@@ -38,6 +38,12 @@ taskform.addEventListener('submit', async (e) => {
 });
 
 
+function getTasks() {
+    const response = await fetch('/api/tasks');
+    const payload = await response.json();
+    console.log(payload);
+}
+
 function generateTask(task) {
     const tmpl = `
     <div class="task-${task.id}">
@@ -49,3 +55,5 @@ function generateTask(task) {
 
     return fragment;
 }
+
+getTasks();
