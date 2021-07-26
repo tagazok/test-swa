@@ -4,7 +4,7 @@
     },
     "routes": [
         {
-            "route": "/index.html",
+            "route": "/api/tasks/*",
             "allowedRoles": ["authenticated"]
         }
     ]
