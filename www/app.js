@@ -43,7 +43,7 @@ function getTasks() {
     const payload = await response.json();
     console.log(payload);
 }
-
+    
 function generateTask(task) {
     const tmpl = `
     <div class="task-${task.id}">
