@@ -3,7 +3,7 @@ async function getUser() {
     const payload = await reponse.json();
     console.log(payload.clientPrincipal);
     if (payload.clientPrincipal == null) {
-        window.location.replace = "/login.html";
+        window.location.replace("/login.html");
 
     }
 }

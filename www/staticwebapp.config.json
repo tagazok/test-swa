@@ -6,6 +6,10 @@
         {
             "route": "/api/tasks/*",
             "allowedRoles": ["authenticated"]
+        },
+        {
+            "route": "/api/users/*",
+            "allowedRoles": ["authenticated"]
         }
     ]
 }
