@@ -12,7 +12,7 @@ async function createUserIfDoesNotExist(user) {
 
     await database.collection("users").updateOne(
         { userId: user.userId},
-        user,
+        {$set: user},
         { upsert: true }
     )
 }
