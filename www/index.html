@@ -7,48 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
 
-    <title>Document</title>
+    <title>TODO</title>
 </head>
 
 <body>
-    <!-- <div>Coucou</div>
-    <div><a href="/.auth/login/github">Login with GitHub</a></div>
-    <div><a href="/.auth/logout">Log out</a></div> -->
     <nav>
         <a href="/.auth/login/github">Login with GitHub</a></li>
 
         <a href="/.auth/logout">Log out</a>
     </nav>
-    <div class="container task_list_empty">
+    <div class="container">
         <header>
             <span class="heading">My TODO</span>
         </header>
         <section class="tasks">
             <ul id="tasksList" class="task-list">
-                <li class="task-item" id="${task.id}">
-                    <label>
-                        <input type="checkbox">
-                        <p>Acheter des carottes</p>
-                    </label>
-                </li>
-                <li class="task-item" id="${task.id}">
-                    <label>
-                        <input type="checkbox">
-                        <p>Acheter des poireaux</p>
-                    </label>
-                </li>
-                <li class="task-item" id="${task.id}">
-                    <label>
-                        <input type="checkbox">
-                        <p>Acheter des patates</p>
-                    </label>
-                </li>
+                <div id="empty">No task 😔</div>
             </ul>
         </section>
         <footer>
-            <form id="new_task_form">
-                <input type="text" id="new_task_input" placeholder="Add New Task" value="" />
-                <button id="new_task_input_btn" type="submit">Add</button>
+            <form id="newTaskForm">
+                <input type="text" placeholder="New Task" value="" />
+                <button type="submit">Add</button>
             </form>
         </footer>
     </div>

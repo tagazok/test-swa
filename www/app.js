@@ -13,9 +13,9 @@ async function getUser() {
 }
 getUser();
 
-const taskform = document.querySelector('#new_task_form');
+const taskform = document.querySelector('#newTaskForm');
 const taskList = document.querySelector('#tasksList');
-
+const empty = document.querySelector('#empty')
 taskform.addEventListener('submit', async (e) => {
 
     e.preventDefault();
