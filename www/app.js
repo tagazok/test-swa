@@ -44,6 +44,7 @@ async function getTasks() {
     console.log(payload);
 
     if (payload.response.task) {
+        document.querySelector("#empty").remove();
         for (const task of payload.response.tasks) {
             taskList.appendChild(generateTask(task))
         }
