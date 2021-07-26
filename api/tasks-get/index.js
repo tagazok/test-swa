@@ -16,6 +16,7 @@ module.exports = async function (context, req) {
     const response = await database.collection("users").findOne({
         userId: user.userId
     });
+    context.log(response);
 
     context.res = {
         body: {
