@@ -52,7 +52,7 @@ function generateTask(task) {
     const tmpl = `
     <li class="task-item" id="${task.id}">
         <label>
-            <input type="checkbox" ${task.cheched}>
+            <input type="checkbox" ${task.status}>
             <p>${task.label}</p>
         </label>
     </li>
