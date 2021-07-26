@@ -6,7 +6,6 @@ const connect = async () => {
 };
 
 async function createUserIfDoesNotExist(user) {
-    user.tasks = [];
     const client = await connect();
     const database = client.db("swa");
 
