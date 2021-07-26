@@ -10,9 +10,15 @@ async function createUserIfDoesNotExist(user) {
     const client = await connect();
     const database = client.db("swa");
 
-    await database.collection("user").insert(
-        user
-    );
+    // await database.collection("users").insert(
+    //     user
+    // );
+
+    await database.collection("users").updateOne(
+        { userId: user.userId},
+        task,
+        { upsert: true }
+    )
 }
 
 module.exports = async function (context, req) {
