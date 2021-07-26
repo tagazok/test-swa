@@ -21,7 +21,7 @@ module.exports = async function (context, req) {
     const task = {
         id: uuidv4(),
         label: req.body.label,
-        status: 'open'
+        status: ""
     };
 
     const response = await database.collection("users").updateOne(
