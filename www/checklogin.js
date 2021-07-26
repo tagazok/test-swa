@@ -7,3 +7,5 @@ async function getUser() {
 
     }
 }
+
+getUser();
