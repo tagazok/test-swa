@@ -5,6 +5,14 @@ const connect = async () => {
     return client;
 };
 
+async function createUserIfDoesNotExist(user) {
+    user.tasks = [];
+
+    const response = await database.collection("user").insert(
+        user
+    );
+}
+
 module.exports = async function (context, req) {
     const client = await connect();
     const database = client.db("swa");
@@ -12,6 +20,8 @@ module.exports = async function (context, req) {
     const encoded = Buffer.from(header, 'base64');
     const decoded = encoded.toString('ascii');
     const user = JSON.parse(decoded);
+
+    await createUserIfDoesNotExist(user);
 
     const response = await database.collection("users").findOne({
         userId: user.userId
