@@ -30,13 +30,13 @@ taskform.addEventListener('submit', async (e) => {
     });
     const payload = await response.json();
     console.log(payload);
-    // const task = generateTask(newTaskInput.value);
     const task = generateTask(payload.task);
 
     taskList.appendChild(task);
 
     newTaskInput.value = '';
 });
+
 
 function generateTask(task) {
     const tmpl = `
