@@ -11,7 +11,7 @@ async function getUser() {
     const { clientPrincipal } = payload;
     return clientPrincipal;
 }
-getUser();
+// getUser();
 
 const taskform = document.querySelector('#new_task_form');
 const taskList = document.querySelector('#tasksList');
