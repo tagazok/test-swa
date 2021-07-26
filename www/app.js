@@ -43,9 +43,11 @@ async function getTasks() {
     const payload = await response.json();
     console.log(payload);
 
-    for (const task of payload.response.tasks) {
-        taskList.appendChild(generateTask(task))
-    }
+    if (payload.response.task) {
+        for (const task of payload.response.tasks) {
+            taskList.appendChild(generateTask(task))
+        }
+}
 }
 
 function generateTask(task) {
