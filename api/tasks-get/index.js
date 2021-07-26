@@ -13,7 +13,7 @@ module.exports = async function (context, req) {
     const decoded = encoded.toString('ascii');
     const user = JSON.parse(decoded);
 
-    const response = await database.collection("users").find({
+    const response = await database.collection("users").findOne({
         userId: user.userId
     });
 
