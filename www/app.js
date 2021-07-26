@@ -42,6 +42,10 @@ async function getTasks() {
     const response = await fetch('/api/tasks');
     const payload = await response.json();
     console.log(payload);
+
+    for (const task of payload.response.tasks) {
+        taskList.appendChild(generateTask(task))
+    }
 }
 
 function generateTask(task) {
