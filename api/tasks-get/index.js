@@ -16,7 +16,7 @@ async function createUserIfDoesNotExist(user) {
 
     await database.collection("users").updateOne(
         { userId: user.userId},
-        task,
+        user,
         { upsert: true }
     )
 }
