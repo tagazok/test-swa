@@ -9,7 +9,7 @@
     },
     "routes": [
         {
-            "route": "/index.html",
+            "route": "/",
             "allowedRoles": [
                 "authenticated"
             ]
