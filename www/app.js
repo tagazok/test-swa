@@ -26,7 +26,7 @@ taskform.addEventListener('submit', async (e) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({label: newTaskInput.value})
+        body: JSON.stringify({ label: newTaskInput.value })
     });
     const payload = await response.json();
     console.log(payload);
@@ -38,6 +38,13 @@ taskform.addEventListener('submit', async (e) => {
 });
 
 
+async function getUser() {
+    const response = await fetch('/.auth/me');
+    const payload = await response.json();
+    console.log(payload.clientPrincipal);
+    document.querySelector("#username").innerText = `Hi, ${payload.clientPrincipal.userDetails}!`;
+}
+
 async function getTasks() {
     const response = await fetch('/api/tasks');
     const payload = await response.json();
@@ -48,7 +55,7 @@ async function getTasks() {
         for (const task of payload.response.tasks) {
             taskList.appendChild(generateTask(task))
         }
-}
+    }
 }
 
 function generateTask(task) {
@@ -66,4 +73,5 @@ function generateTask(task) {
     return fragment;
 }
 
+getUser();
 getTasks();

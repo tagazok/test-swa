@@ -1,15 +1,30 @@
 {
-    "navigationFallback": {
-        "rewrite": "/index.html"
+    "responseOverrides": {
+        "404": {
+            "redirect": "/404.html"
+        },
+        "401": {
+            "redirect": "/login.html"
+        }
     },
     "routes": [
         {
+            "route": "/index.html",
+            "allowedRoles": [
+                "authenticated"
+            ]
+        },
+        {
             "route": "/api/tasks/*",
-            "allowedRoles": ["authenticated"]
+            "allowedRoles": [
+                "authenticated"
+            ]
         },
         {
             "route": "/api/users/*",
-            "allowedRoles": ["authenticated"]
+            "allowedRoles": [
+                "authenticated"
+            ]
         }
     ]
 }
